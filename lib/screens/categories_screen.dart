@@ -9,7 +9,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("tourist guide"),
+        title: const Text("Tourist Guide"),
       ),
       body: GridView(
         padding: const EdgeInsets.all(10),
@@ -21,7 +21,10 @@ class CategoriesScreen extends StatelessWidget {
         ),
         children: categories_data
             .map((categoryData) => CategoryItem(
-                title: categoryData.title, imageUrl: categoryData.imageUrl))
+                  title: categoryData.title,
+                  imageUrl: categoryData.imageUrl,
+                  id: categoryData.id,
+                ))
             .toList(),
       ),
     );
