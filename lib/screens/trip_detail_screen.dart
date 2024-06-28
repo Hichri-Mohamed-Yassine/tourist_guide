@@ -13,7 +13,7 @@ class TripDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "${selectedTrip.title}",
+          selectedTrip.title,
           textAlign: TextAlign.center,
         ),
       ),
@@ -62,7 +62,7 @@ class TripDetailScreen extends StatelessWidget {
                       ),
                       title: Text(selectedTrip.program[index]),
                     ),
-                    Divider(),
+                    const Divider(),
                   ],
                 ),
               ),

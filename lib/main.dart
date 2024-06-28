@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/models/catogory.dart';
-import 'package:traveling_app/screens/categories_screen.dart';
+//import 'package:traveling_app/models/catogory.dart';
+//import 'package:traveling_app/screens/categories_screen.dart';
 import 'package:traveling_app/screens/categories_trips_screen.dart';
+import 'package:traveling_app/screens/filters_screen.dart';
 import 'package:traveling_app/screens/tabs_screen.dart';
 import 'package:traveling_app/screens/trip_detail_screen.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Travel App',
       theme: ThemeData(
+        primaryColor: Colors.blue,
         primarySwatch: Colors.blue,
         hintColor: Colors.amber,
         useMaterial3: true,
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         textTheme: ThemeData.light().textTheme.copyWith(
               headlineMedium: const TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: 24,
                   fontFamily: "Rubik",
                   fontWeight: FontWeight.bold),
               headlineSmall: const TextStyle(
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         "/": (ctx) => const TabsScreen(),
         CategoriesTripsScreen.screenRoute: (ctx) => CategoriesTripsScreen(),
         TripDetailScreen.screenRoute: (ctx) => TripDetailScreen(),
+        FiltersScreen.screenRoute: (ctx) => FiltersScreen(),
       },
     );
   }
