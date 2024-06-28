@@ -33,6 +33,7 @@ class CategoriesTripsScreen extends StatelessWidget {
             duration: filteredTrips[index].duration,
             tripType: filteredTrips[index].tripType,
             season: filteredTrips[index].season,
+            id: filteredTrips[index].id,
           );
         },
         itemCount: filteredTrips.length,

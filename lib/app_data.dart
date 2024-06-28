@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 import 'package:traveling_app/models/trip.dart';
 import './models/catogory.dart';
 

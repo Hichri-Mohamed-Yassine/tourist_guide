@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_app/models/trip.dart';
+import 'package:traveling_app/screens/trip_detail_screen.dart';
 
 class TripItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -13,7 +15,8 @@ class TripItem extends StatelessWidget {
       required this.imageUrl,
       required this.duration,
       required this.tripType,
-      required this.season});
+      required this.season,
+      required this.id});
   String get seasonText {
     switch (season) {
       case Season.Winter:
@@ -52,12 +55,15 @@ class TripItem extends StatelessWidget {
     }
   }
 
-  void selectTrip() {}
+  void selectTrip(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(TripDetailScreen.screenRoute, arguments: id);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectTrip,
+      onTap: () => selectTrip(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
