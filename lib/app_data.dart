@@ -41,7 +41,7 @@ const categories_data = const [
   ),
 ];
 
-const Trips_data = const [
+const Trips_data = [
   Trip(
     id: 'm1',
     categories: [

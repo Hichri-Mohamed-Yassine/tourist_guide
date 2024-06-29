@@ -10,7 +10,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 120,
+            height: 124,
             width: double.infinity,
             padding: const EdgeInsets.only(top: 40),
             alignment: Alignment.center,
@@ -21,7 +21,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 32,
           ),
           buildListTile(
             "Trips",

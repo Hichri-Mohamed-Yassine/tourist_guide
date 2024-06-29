@@ -19,8 +19,8 @@ class _TabsScreenState extends State<TabsScreen> {
   ];*/
 
   final List<Widget> _screens = [
-    CategoriesScreen(),
-    FavoritesScreen(),
+    const CategoriesScreen(),
+    const FavoritesScreen(),
   ];
 
   final List<String> _titles = [
@@ -37,12 +37,13 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         title: Text(
           _titles[_selectedScreenIndex],
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: _screens[_selectedScreenIndex],
