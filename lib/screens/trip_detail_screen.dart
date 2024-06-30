@@ -3,8 +3,11 @@ import 'package:traveling_app/app_data.dart';
 
 class TripDetailScreen extends StatelessWidget {
   static const String screenRoute = "/trip-detail";
+  final void Function(String) manageFavorite;
+  final Function isFavorite;
+  TripDetailScreen(this.manageFavorite, this.isFavorite);
 
-  const TripDetailScreen({super.key});
+  //const TripDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,12 +77,8 @@ class TripDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pop(tripId);
-        },
-        child: const Icon(
-          Icons.delete,
-        ),
+        onPressed: () => manageFavorite(tripId),
+        child: Icon(isFavorite(tripId) ? Icons.star : Icons.star_border),
       ),
     );
   }

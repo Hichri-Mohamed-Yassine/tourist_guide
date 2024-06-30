@@ -56,7 +56,7 @@ class _CategoriesTripsScreenState extends State<CategoriesTripsScreen> {
             tripType: dispalyTrips[index].tripType,
             season: dispalyTrips[index].season,
             id: dispalyTrips[index].id,
-            removeItem: _removeTrip,
+            //removeItem: _removeTrip,
           );
         },
         itemCount: dispalyTrips.length,

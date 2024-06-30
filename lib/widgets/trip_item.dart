@@ -9,7 +9,7 @@ class TripItem extends StatelessWidget {
   final int duration;
   final TripType tripType;
   final Season season;
-  final Function removeItem;
+  //final Function removeItem;
   const TripItem({
     super.key,
     required this.title,
@@ -18,7 +18,7 @@ class TripItem extends StatelessWidget {
     required this.tripType,
     required this.season,
     required this.id,
-    required this.removeItem,
+    //required this.removeItem,
   });
   String get seasonText {
     switch (season) {
@@ -58,7 +58,7 @@ class TripItem extends StatelessWidget {
     )
         .then((result) {
       if (result != null) {
-        removeItem(result);
+        //removeItem(result);
       }
     });
   }
