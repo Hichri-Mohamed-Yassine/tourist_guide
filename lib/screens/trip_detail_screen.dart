@@ -20,7 +20,7 @@ class TripDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 250,
               width: double.infinity,
               child: Image.network(
@@ -69,8 +69,16 @@ class TripDetailScreen extends StatelessWidget {
             ),
             const SizedBox(
               height: 100,
-            )
+            ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(tripId);
+        },
+        child: const Icon(
+          Icons.delete,
         ),
       ),
     );

@@ -9,28 +9,27 @@ class TripItem extends StatelessWidget {
   final int duration;
   final TripType tripType;
   final Season season;
-  const TripItem(
-      {super.key,
-      required this.title,
-      required this.imageUrl,
-      required this.duration,
-      required this.tripType,
-      required this.season,
-      required this.id});
+  final Function removeItem;
+  const TripItem({
+    super.key,
+    required this.title,
+    required this.imageUrl,
+    required this.duration,
+    required this.tripType,
+    required this.season,
+    required this.id,
+    required this.removeItem,
+  });
   String get seasonText {
     switch (season) {
       case Season.Winter:
         return "شتاء";
-        break;
       case Season.Autumn:
         return "خريف";
-        break;
       case Season.Spring:
         return "ربيع";
-        break;
       case Season.Summer:
         return "صيف";
-        break;
       default:
         return " غير معروف";
     }
@@ -40,16 +39,12 @@ class TripItem extends StatelessWidget {
     switch (tripType) {
       case TripType.Exploration:
         return "استكشاف";
-        break;
       case TripType.Recovery:
         return "نقاهه";
-        break;
       case TripType.Activities:
         return "انشطة";
-        break;
       case TripType.Therapy:
         return "مُعَالَجَة";
-        break;
       default:
         return " غير معروف";
     }
@@ -57,7 +52,15 @@ class TripItem extends StatelessWidget {
 
   void selectTrip(BuildContext context) {
     Navigator.of(context)
-        .pushNamed(TripDetailScreen.screenRoute, arguments: id);
+        .pushNamed(
+      TripDetailScreen.screenRoute,
+      arguments: id,
+    )
+        .then((result) {
+      if (result != null) {
+        removeItem(result);
+      }
+    });
   }
 
   @override
